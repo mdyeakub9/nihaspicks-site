@@ -3,183 +3,103 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>A Gift That Makes Them Ask “How Does That Work?” | NihasPicks</title>
-<meta name="description" content="A science toy box from the team behind Vsauce, delivered every season. What's inside, who it suits, and a code for 25% off the first box.">
+<title>The World's Best Science Toys, Delivered | NihasPicks</title>
+<meta name="description" content="The Curiosity Box from Vsauce: science toys, puzzles and an exclusive tee, delivered every 3 months. 25% off the first box with code MAX25.">
 <link rel="canonical" href="https://nihaspicks.com/stem-gift/">
-<meta property="og:title" content="A gift that makes them ask “how does that work?”">
-<meta property="og:description" content="Physics toys, puzzles and an exclusive tee — a new box every season.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://nihaspicks.com/stem-gift/">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#F25C05">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/style.css">
 <script defer src="/assets/main.js"></script>
+<style>
+@font-face{font-family:"Bricolage";src:url(/assets/fonts/bricolage-grotesque-latin-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Atkinson";src:url(/assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Atkinson";src:url(/assets/fonts/atkinson-hyperlegible-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{--orange:#F25C05;--orange-2:#FF7A1A;--cream:#FFE3A3;--char:#2A2A2E}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font:400 17px/1.5 "Atkinson",system-ui,sans-serif;color:var(--char);background:var(--orange);min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+
+.top{font-size:12px;text-align:center;color:#fff;opacity:.9;padding:8px 14px}
+.top a{color:#fff}
+
+.banner{flex:1;position:relative;overflow:hidden;color:#fff;text-align:center;padding:18px 20px 34px;
+  background-color:var(--orange);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='97' viewBox='0 0 84 97'%3E%3Cg fill='none' stroke='%23FF7A1A' stroke-width='5'%3E%3Cpath d='M42 4 L80 26 L80 70 L42 92 L4 70 L4 26 Z'/%3E%3Cpath d='M42 24 L62 36 L62 60 L42 72 L22 60 L22 36 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:84px 97px}
+.inner{max-width:520px;margin:0 auto;position:relative}
+.brand{font:800 15px/1 "Bricolage",sans-serif;letter-spacing:.02em;display:inline-flex;gap:8px;align-items:center;background:var(--char);color:#fff;padding:8px 14px;border-radius:999px}
+.brand i{width:9px;height:9px;border-radius:50%;background:var(--orange-2)}
+h1{font:800 clamp(30px,8.6vw,48px)/1.02 "Bricolage",sans-serif;text-transform:uppercase;letter-spacing:-.01em;margin:18px 0 10px;text-shadow:0 2px 0 rgba(0,0,0,.08)}
+h1 span{color:var(--cream)}
+.sub{font-size:18px;margin:0 auto 6px;max-width:30ch}
+
+.stage{position:relative}
+.box{width:min(300px,78vw);margin:14px auto 4px;filter:drop-shadow(0 18px 18px rgba(80,25,0,.35))}
+.burst{position:absolute;right:-4px;top:8px;width:112px;height:112px;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;
+  font:800 13px/1.05 "Bricolage",sans-serif;text-transform:uppercase;color:#fff;background:var(--char);transform:rotate(12deg);
+  clip-path:polygon(50% 0,61% 12%,76% 6%,79% 22%,94% 24%,88% 39%,100% 50%,88% 61%,94% 76%,79% 78%,76% 94%,61% 88%,50% 100%,39% 88%,24% 94%,21% 78%,6% 76%,12% 61%,0 50%,12% 39%,6% 24%,21% 22%,24% 6%,39% 12%)}
+@media(min-width:560px){.burst{right:24px}}
+
+.code{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin:12px 0 0;background:#fff;color:var(--char);border-radius:14px;padding:10px 12px 10px 16px;font-size:15px;font-weight:700;box-shadow:0 4px 0 rgba(0,0,0,.12)}
+.code b{font:800 22px/1 "Bricolage",sans-serif;letter-spacing:.06em;border:2px dashed var(--orange);padding:5px 10px;border-radius:8px}
+.code button{font:700 14px/1 "Atkinson",sans-serif;border:0;background:var(--char);color:#fff;border-radius:999px;padding:10px 12px;cursor:pointer}
+
+.cta{display:block;max-width:420px;margin:20px auto 8px;background:var(--char);color:#fff;text-decoration:none;font:800 22px/1 "Bricolage",sans-serif;text-transform:uppercase;letter-spacing:.02em;border-radius:999px;padding:20px 24px;box-shadow:0 5px 0 #000}
+.cta:active{transform:translateY(3px);box-shadow:0 2px 0 #000}
+.note{font-size:14px;opacity:.95;margin:0}
+
+.foot{background:var(--char);color:#c9c9cf;font-size:12.5px;padding:18px 20px 22px;text-align:center}
+.foot nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;margin-bottom:8px}
+.foot a{color:#e6e6ea}
+.foot p{max-width:560px;margin:0 auto}
+
+.consent{position:fixed;left:12px;right:12px;bottom:12px;max-width:520px;margin:0 auto;background:#fff;color:var(--char);border-radius:12px;box-shadow:0 14px 30px -12px rgba(0,0,0,.35);padding:16px 18px;font-size:15px;z-index:30;display:none}
+.consent.show{display:block}
+.consent .row{display:flex;gap:10px;margin-top:12px}
+.consent button{flex:1;border-radius:999px;padding:11px;font:700 15px/1 "Atkinson",sans-serif;cursor:pointer;border:1px solid #ccc;background:#fff}
+.consent button.primary{background:var(--char);color:#fff;border-color:var(--char)}
+@media (prefers-reduced-motion:no-preference){.box{animation:pop .6s cubic-bezier(.2,1.4,.4,1) both}@keyframes pop{from{transform:translateY(16px) scale(.94);opacity:0}}}
+</style>
 </head>
 <body data-page="lander">
 
-<div class="disclosure-bar">Advertorial. We earn a commission if you buy through links on this page, at no extra cost to you. <a href="/disclosure/">How this works</a></div>
+<div class="top">Advertisement. We earn a commission if you buy through this page. <a href="/disclosure/">Disclosure</a></div>
 
-<header class="site-header"><div class="wrap">
-  <a class="logo" href="/">NihasPicks<i></i></a>
-  <nav><a href="/">More gift ideas</a></nav>
-</div></header>
+<main class="banner">
+  <div class="inner">
+    <span class="brand"><i></i>The Curiosity Box by Vsauce</span>
+    <h1>The world's best <span>science toys</span>, delivered to your door</h1>
+    <p class="sub">Physics toys, puzzles and an exclusive tee. A new box every 3 months.</p>
 
-<main class="wrap">
-<article>
-
-  <h1>A gift that makes them ask, “wait, how does that work?”</h1>
-  <p class="lede">For the curious kid, teen or grown-up who already has every gadget: a box of mind-bending science toys that shows up again every season.</p>
-  <p class="byline">NihasPicks gift guide, updated November 2026</p>
-
-  <figure class="notebook">
-    <span class="tape" aria-hidden="true"></span>
-    <svg class="sketch" viewBox="0 0 640 420" role="img" aria-label="Hand-drawn sketch of an open box with a gyroscope, a puzzle, a T-shirt and a book coming out of it">
-      <g fill="none" stroke="#1E2433" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <!-- open box -->
-        <path d="M214 268 L320 300 L426 268 L426 372 L320 404 L214 372 Z" fill="#fff"/>
-        <path d="M320 300 L320 404"/>
-        <path d="M214 268 L170 236 L276 214 L320 244" fill="#fff"/>
-        <path d="M426 268 L470 236 L364 214 L320 244" fill="#fff"/>
-        <path d="M214 268 L320 244 L426 268"/>
-        <!-- box pattern (brand-ish orange petals) -->
-        <g stroke="#F05A1A" stroke-width="2.5">
-          <circle cx="252" cy="326" r="11"/><circle cx="282" cy="336" r="11"/><circle cx="252" cy="356" r="11"/><circle cx="282" cy="366" r="11"/>
-          <circle cx="358" cy="336" r="11"/><circle cx="388" cy="326" r="11"/><circle cx="358" cy="366" r="11"/><circle cx="388" cy="356" r="11"/>
+    <div class="stage">
+      <svg class="box" viewBox="0 0 300 230" role="img" aria-label="Illustration of a Curiosity Box">
+        <path d="M150 52 L282 92 L150 132 L18 92 Z" fill="#FFF4DD"/>
+        <path d="M18 92 L150 132 L150 226 L18 186 Z" fill="#FBE9C6"/>
+        <path d="M150 132 L282 92 L282 186 L150 226 Z" fill="#F3D9A8"/>
+        <g fill="#F25C05">
+          <circle cx="48" cy="128" r="10"/><circle cx="74" cy="136" r="10"/><circle cx="100" cy="144" r="10"/><circle cx="126" cy="152" r="10"/>
+          <circle cx="48" cy="156" r="10"/><circle cx="74" cy="164" r="10"/><circle cx="100" cy="172" r="10"/><circle cx="126" cy="180" r="10"/>
         </g>
-
-        <!-- gyroscope -->
-        <g class="spin">
-          <circle cx="150" cy="128" r="50"/>
-          <ellipse cx="150" cy="128" rx="50" ry="16" transform="rotate(-18 150 128)"/>
-          <path d="M150 68 L150 188"/>
-          <circle cx="150" cy="128" r="7" fill="#F05A1A" stroke="#F05A1A"/>
-          <path d="M138 196 L162 196"/>
+        <g transform="matrix(1 -0.3 0 1 0 0)" fill="#2A2A2E" font-family="Bricolage,sans-serif" font-weight="800" font-size="21">
+          <text x="164" y="206">CURIOSITY</text>
+          <text x="164" y="230">BOX</text>
         </g>
-        <path d="M86 92 C 74 112, 74 144, 86 164" stroke="#F05A1A" stroke-dasharray="2 8"/>
-        <path d="M214 92 C 226 112, 226 144, 214 164" stroke="#F05A1A" stroke-dasharray="2 8"/>
-
-        <!-- t-shirt -->
-        <path d="M290 74 L306 64 C 312 74, 328 74, 334 64 L350 74 L362 96 L346 102 L346 150 L294 150 L294 102 L278 96 Z" fill="#fff"/>
-        <path d="M306 64 C 312 74, 328 74, 334 64" stroke="#F05A1A"/>
-
-        <!-- puzzle pieces -->
-        <path d="M470 88 h34 v10 a9 9 0 1 0 0 16 v10 h-34 v-12 a9 9 0 1 1 0 -14 z" fill="#FFF1A8"/>
-        <path d="M512 104 h38 v36 h-38 v-12 a9 9 0 1 0 0 -14 z" fill="#fff"/>
-        <path d="M478 132 h26 v24 h-26 z" fill="#fff" transform="rotate(12 491 144)"/>
-
-        <!-- book -->
-        <path d="M494 236 C 514 228, 534 228, 552 236 L552 300 C 534 292, 514 292, 494 300 Z" fill="#fff"/>
-        <path d="M552 236 C 570 228, 590 228, 610 236 L610 300 C 590 292, 570 292, 552 300"/>
-        <path d="M506 252 h34 M506 264 h28 M564 252 h34 M564 264 h26" stroke-width="2"/>
-
-        <!-- arrows -->
-        <path d="M40 206 C 56 194, 76 190, 108 192" stroke-width="2"/><path d="M99 186 L109 192 L100 198" stroke-width="2"/>
-        <path d="M264 40 C 276 46, 284 54, 290 64" stroke-width="2"/><path d="M282 60 L291 66 L292 55" stroke-width="2"/>
-        <path d="M548 66 C 540 76, 530 84, 516 88" stroke-width="2"/><path d="M523 82 L515 89 L525 93" stroke-width="2"/>
-        <path d="M596 364 C 592 344, 586 324, 578 308" stroke-width="2"/><path d="M575 318 L578 307 L587 314" stroke-width="2"/>
-        <path d="M150 380 C 168 372, 186 366, 206 360" stroke-width="2"/><path d="M197 357 L207 360 L200 368" stroke-width="2"/>
-      </g>
-      <g fill="#1E2433" font-size="31">
-        <text x="6" y="232">spins on a fingertip</text>
-        <text x="146" y="30">exclusive tee</text>
-        <text x="634" y="52" text-anchor="end" fill="#C7440C">5 seconds… or 5 days</text>
-        <text x="634" y="394" text-anchor="end">the why, explained</text>
-        <text x="6" y="408" fill="#C7440C">new box every season</text>
-      </g>
-    </svg>
-    <figcaption>A sketch of a typical box. Contents change every season.</figcaption>
-  </figure>
-
-  <a class="cta" data-aff="cta-top" href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">See this season's box</a>
-  <p class="cta-note">Opens the official Curiosity Box site</p>
-
-  <h2>Why this one stands out</h2>
-  <p>Most toys get a week of attention before they disappear into a drawer. The gifts that stick are the ones that spark a question, the kind that turns into a ten-minute explanation at dinner.</p>
-  <p><strong>The Curiosity Box</strong> is a science subscription made by the team behind Vsauce, the YouTube channel known for big questions explained simply. Instead of one toy, you give a surprise that keeps arriving all year.</p>
-
-  <h2>What's usually inside</h2>
-  <p>Every box is a limited-edition set built around a theme. A typical one includes:</p>
-  <ul class="contents">
-    <li>
-      <svg viewBox="0 0 56 56" aria-hidden="true" fill="none" stroke="#1E2433" stroke-width="2.4" stroke-linecap="round"><circle cx="28" cy="26" r="18"/><ellipse cx="28" cy="26" rx="18" ry="6" transform="rotate(-18 28 26)"/><path d="M28 4v44M22 50h12"/><circle cx="28" cy="26" r="3" fill="#F05A1A" stroke="#F05A1A"/></svg>
-      <div><h3>Science toys</h3><p>Objects that seem to break the rules of physics, and that nobody can stop fidgeting with.</p></div>
-    </li>
-    <li>
-      <svg viewBox="0 0 56 56" aria-hidden="true" fill="none" stroke="#1E2433" stroke-width="2.4" stroke-linejoin="round"><path d="M8 14h18v6a5 5 0 1 0 0 9v6H8v-7a5 5 0 1 1 0-8z" fill="#FFF1A8"/><path d="M30 22h18v20H30v-7a5 5 0 1 0 0-8z"/></svg>
-      <div><h3>Puzzles</h3><p>Easy to pick up, hard to put down. Good ones get passed around the whole family.</p></div>
-    </li>
-    <li>
-      <svg viewBox="0 0 56 56" aria-hidden="true" fill="none" stroke="#1E2433" stroke-width="2.4" stroke-linejoin="round"><path d="M16 10l7-4c2 4 8 4 10 0l7 4 6 10-7 3v25H17V23l-7-3z"/><path d="M23 6c2 4 8 4 10 0" stroke="#F05A1A"/></svg>
-      <div><h3>An exclusive T-shirt</h3><p>A design made for that box only. You won't find it in stores.</p></div>
-    </li>
-    <li>
-      <svg viewBox="0 0 56 56" aria-hidden="true" fill="none" stroke="#1E2433" stroke-width="2.4" stroke-linejoin="round"><path d="M6 14c7-3 14-3 22 0v30c-8-3-15-3-22 0zM28 14c8-3 15-3 22 0v30c-7-3-14-3-22 0"/><path d="M11 22h12M11 28h10M33 22h12" stroke="#F05A1A" stroke-width="2"/></svg>
-      <div><h3>A book or guide</h3><p>Explains the science behind everything in the box, so the “why” comes included.</p></div>
-    </li>
-  </ul>
-
-  <h2>Who it suits</h2>
-  <dl class="suits">
-    <div><dt>Kids and teens who take things apart</dt><dd>Hands-on play that isn't a screen.</dd></div>
-    <div><dt>Grown-ups who love science</dt><dd>Plenty of adults subscribe for themselves: desk toys, puzzles, conversation pieces.</dd></div>
-    <div><dt>Families</dt><dd>Opening the box together becomes a small event. Everyone wants a turn.</dd></div>
-    <div><dt>Teachers and homeschoolers</dt><dd>Ready-made demos that make abstract ideas click.</dd></div>
-  </dl>
-
-  <h2>Why it works as a gift</h2>
-  <ul class="reasons">
-    <li><strong>It keeps going.</strong> A new box arrives every season, long after the wrapping paper is gone.</li>
-    <li><strong>It's screen-free.</strong> Real objects, real puzzles, real “aha” moments.</li>
-    <li><strong>It's hard to duplicate.</strong> Items are limited-edition, so they won't already own it.</li>
-    <li><strong>It ships to them.</strong> Enter their address at checkout and skip the post office.</li>
-  </ul>
-
-  <h2>How to order</h2>
-  <ol class="steps">
-    <li><div><strong>Choose a plan</strong> on the official site: a single season or a full year.</div></li>
-    <li><div><strong>Enter the code below</strong> at checkout.</div></li>
-    <li><div><strong>The box ships</strong> to you, or straight to the person you're surprising.</div></li>
-  </ol>
-
-  <div class="note">
-    <p class="hand">25% off the first box</p>
-    <div class="row">
-      <span class="code">MAX25</span>
-      <button class="copy-btn" type="button" data-copy="MAX25">Copy code</button>
+      </svg>
+      <div class="burst">Free Legacy Box with annual plan</div>
     </div>
-    <p>Buying a full year? <strong>HAPPY25</strong> takes $60 off the annual plan.</p>
+
+    <div class="code">25% off your first box <b>MAX25</b><button type="button" data-copy="MAX25">Copy code</button></div>
+
+    <a class="cta" data-aff="cta-main" href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">Try it</a>
+    <p class="note">Opens the official Curiosity Box site. Final price shown at checkout.</p>
   </div>
-  <p class="small">Codes and prices are set by The Curiosity Box and can change. You'll see the final price at checkout before you pay.</p>
-
-  <a class="cta" data-aff="cta-mid" href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">Get 25% off the first box</a>
-  <p class="cta-note">Opens the official Curiosity Box site</p>
-
-  <h2>Questions people ask</h2>
-  <div class="faq">
-    <details><summary>How often does a box arrive?</summary><p>About four times a year, one box per season. The official site shows the next ship date.</p></details>
-    <details><summary>Can I send it as a gift?</summary><p>Yes. Enter the recipient's address at checkout and it goes straight to them.</p></details>
-    <details><summary>What age is it for?</summary><p>The brand calls it a box for thinkers of any age. It suits school-age kids, teens and adults. Younger children may want a grown-up's help with some items.</p></details>
-    <details><summary>Where does it ship?</summary><p>Shipping options and costs depend on your country and are shown on the official site before you pay.</p></details>
-    <details><summary>Is NihasPicks the seller?</summary><p>No. NihasPicks is an independent gift guide. Your order is placed with and fulfilled by The Curiosity Box. We may earn a commission when you buy through our links.</p></details>
-  </div>
-
-  <section class="closing">
-    <h2>Still deciding?</h2>
-    <p>Have a look at what's in this season's box. The code works on the first box, and you can see the full price before checking out.</p>
-    <a class="cta" data-aff="cta-bottom" href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">Check today's price</a>
-    <p class="cta-note">Use code MAX25 for 25% off the first box</p>
-  </section>
-
-</article>
 </main>
 
-<div class="sticky-cta"><a data-aff="cta-sticky" href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">Get 25% off the first box</a></div>
-
-<footer class="site-footer"><div class="wrap">
-  <nav><a href="/">Home</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/disclosure/">Affiliate Disclosure</a><a href="/contact/">Contact</a></nav>
-  <p>NihasPicks is an independent website. It is not affiliated with, endorsed by or sponsored by The Curiosity Box, Vsauce, Meta or Facebook. Product names and trademarks belong to their owners. This site is not part of the Facebook website or Meta Platforms, Inc.</p>
-  <p>© 2026 NihasPicks</p>
-</div></footer>
+<footer class="foot">
+  <nav><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/disclosure/">Affiliate Disclosure</a><a href="/contact/">Contact</a></nav>
+  <p>NihasPicks is an independent site, not affiliated with The Curiosity Box, Vsauce or Meta. Offers are set by the brand and may change. This site is not part of the Facebook website or Meta Platforms, Inc.</p>
+</footer>
 </body>
 </html>
