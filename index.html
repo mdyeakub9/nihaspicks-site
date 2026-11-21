@@ -85,6 +85,13 @@ h1 span{color:var(--cream)}
 .again .cta{background:var(--orange);box-shadow:0 5px 0 #B54100}
 .again .disc{color:#55555c}
 .again .disc a{color:#55555c}
+.stack{position:relative;width:min(330px,82vw);aspect-ratio:1/1;margin:22px auto 6px}
+.stack .card{position:absolute;inset:0;background:#fff;border-radius:22px;padding:9px;box-shadow:0 24px 40px -14px rgba(70,20,0,.55)}
+.stack .card img{width:100%;height:100%;object-fit:cover;border-radius:15px;display:block;background:#eee}
+.stack .back{transform:rotate(-8deg) translate(-16px,6px) scale(.92)}
+.stack .front{transform:rotate(4deg) translate(10px,0)}
+.stack .burst{right:-14px;top:-18px;z-index:3}
+@media (prefers-reduced-motion:no-preference){.stack .front{animation:deal .7s cubic-bezier(.2,1.3,.4,1) .1s both}@keyframes deal{from{transform:rotate(-8deg) translate(-16px,6px) scale(.92)}}}
 </style>
 </head>
 <body data-page="lander">
@@ -96,8 +103,11 @@ h1 span{color:var(--cream)}
     <p class="sub">Physics toys, puzzles and an exclusive tee. A new box every 3 months.</p>
 
     <div class="stage">
-      <img class="hero-img" src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/golden2024_setting_v2_1.png?width=900" width="900" height="718" alt="An open Curiosity Box with the science toys, puzzles and T-shirt that came inside" fetchpriority="high">
-      <div class="burst">Free Legacy Box with annual plan</div>
+      <div class="stack">
+        <div class="card back"><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_118019.jpg?width=700" width="700" height="700" alt=""></div>
+        <div class="card front"><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_118048.jpg?width=700" width="700" height="700" alt="A Curiosity Box with a T-shirt, book and science toys" fetchpriority="high"></div>
+        <div class="burst">Free Legacy Box with annual plan</div>
+      </div>
     </div>
 
     <div class="code">25% off your first box <b>MAX25</b><button type="button" data-copy="MAX25">Copy code</button></div>
@@ -111,7 +121,7 @@ h1 span{color:var(--cream)}
   <h2>Every box is different</h2>
   <p class="lead">A few of their past boxes. Each one is a limited-edition surprise.</p>
   <div class="strip">
-      <figure><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_118048.jpg?width=600" width="600" height="600" loading="lazy" alt="Box with a T-shirt, book and science toys"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_11.png?width=600" width="600" height="600" loading="lazy" alt="Box with a T-shirt, book and science toys"></figure>
       <figure><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_118019.jpg?width=600" width="600" height="600" loading="lazy" alt="Box with a desk lamp toy, puzzle and red T-shirt"></figure>
       <figure><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/spring-box.png?width=600" width="600" height="600" loading="lazy" alt="Spring box with a rubber duck toy and patterned box"></figure>
       <figure><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_10.png?width=600" width="600" height="600" loading="lazy" alt="Curiosity Box with toys spilling out"></figure>
