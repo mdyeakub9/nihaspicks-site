@@ -92,6 +92,11 @@ h1 span{color:var(--cream)}
 .stack .front{transform:rotate(4deg) translate(10px,0)}
 .stack .burst{right:-14px;top:-18px;z-index:3}
 @media (prefers-reduced-motion:no-preference){.stack .front{animation:deal .7s cubic-bezier(.2,1.3,.4,1) .1s both}@keyframes deal{from{transform:rotate(-8deg) translate(-16px,6px) scale(.92)}}}
+.hero-box{position:relative;width:min(400px,84vw);margin:18px auto 4px}
+.hero-box::before{content:"";position:absolute;left:8%;right:8%;bottom:2%;height:14%;background:radial-gradient(closest-side,rgba(70,20,0,.45),transparent);filter:blur(6px);z-index:0}
+.hero-box img{position:relative;z-index:1;width:100%;height:auto;display:block}
+.hero-box .burst{right:-12px;top:-8px;z-index:2}
+@media (prefers-reduced-motion:no-preference){.hero-box img{animation:pop .7s cubic-bezier(.2,1.35,.4,1) both}}
 </style>
 </head>
 <body data-page="lander">
@@ -103,9 +108,8 @@ h1 span{color:var(--cream)}
     <p class="sub">Physics toys, puzzles and an exclusive tee. A new box every 3 months.</p>
 
     <div class="stage">
-      <div class="stack">
-        <div class="card back"><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_118019.jpg?width=700" width="700" height="700" alt=""></div>
-        <div class="card front"><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_118048.jpg?width=700" width="700" height="700" alt="A Curiosity Box with a T-shirt, book and science toys" fetchpriority="high"></div>
+      <div class="hero-box">
+        <img src="/assets/hero-box-900.webp" srcset="/assets/hero-box-600.webp 600w, /assets/hero-box-900.webp 900w" sizes="(max-width:600px) 84vw, 400px" width="900" height="935" alt="An open Curiosity Box packed with a gyroscope, a puzzle cube, a book, a ruler and a poster" fetchpriority="high">
         <div class="burst">Free Legacy Box with annual plan</div>
       </div>
     </div>
