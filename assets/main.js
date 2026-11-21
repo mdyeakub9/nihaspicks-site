@@ -55,15 +55,39 @@
     document.body.appendChild(box);
   }
 
+  // --- geo guard ---
+  // The offer only accepts US, CA, UK and AU. MaxBounty sends visitors from other
+  // countries to an unrelated fallback offer (e.g. a casino). To avoid that, visitors
+  // whose time zone is outside those countries go straight to the brand's own site.
+  var OFFER_FALLBACK_URL = "https://www.curiositybox.com/";
+  function inAllowedRegion() {
+    var tz = "";
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) { return true; }
+    if (!tz) return true;
+    if (/^(US|Canada)\//.test(tz) || /^Australia\//.test(tz)) return true;
+    if (/^Europe\/(London|Belfast)$/.test(tz) || /^Pacific\/Honolulu$/.test(tz)) return true;
+    if (/^America\/(New_York|Detroit|Chicago|Denver|Phoenix|Boise|Los_Angeles|Anchorage|Juneau|Sitka|Metlakatla|Yakutat|Nome|Adak|Menominee|Indiana\/.+|Kentucky\/.+|North_Dakota\/.+|Toronto|Montreal|Nipigon|Thunder_Bay|Iqaluit|Winnipeg|Rainy_River|Rankin_Inlet|Resolute|Regina|Swift_Current|Edmonton|Calgary|Cambridge_Bay|Yellowknife|Inuvik|Dawson_Creek|Fort_Nelson|Creston|Vancouver|Whitehorse|Dawson|Halifax|Glace_Bay|Moncton|Goose_Bay|St_Johns|Atikokan|Blanc-Sablon)$/.test(tz)) return true;
+    return false;
+  }
+
   // --- affiliate links: add sub-IDs for tracking in MaxBounty reports ---
   function initAffLinks() {
+    // HTML links point to the brand's own site by default; the affiliate link
+    // (data-href) is switched in only for visitors in the offer's countries.
+    if (!inAllowedRegion()) {
+      document.querySelectorAll("a[data-aff]").forEach(function (a) {
+        a.setAttribute("href", OFFER_FALLBACK_URL);
+        a.setAttribute("rel", "noopener");
+      });
+      return;
+    }
     var params = new URLSearchParams(location.search);
     var src = params.get("utm_source") || (params.get("fbclid") ? "fb" : "direct");
     var ad = params.get("utm_content") || params.get("utm_campaign") || "none";
     var links = document.querySelectorAll("a[data-aff]");
     links.forEach(function (a) {
       try {
-        var u = new URL(a.getAttribute("href"));
+        var u = new URL(a.getAttribute("data-href") || a.getAttribute("href"));
         u.searchParams.set("s1", src.slice(0, 50));
         u.searchParams.set("s2", ad.slice(0, 50));
         u.searchParams.set("s3", (a.getAttribute("data-aff") || "cta").slice(0, 50));
