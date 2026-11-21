@@ -1,0 +1,113 @@
+/* NihasPicks site script
+ * 1. Meta Pixel (loads only after the visitor accepts cookies)
+ * 2. Affiliate link sub-IDs (s1 = traffic source, s2 = ad / utm_content)
+ * 3. Coupon copy button + sticky mobile CTA
+ */
+(function () {
+  // ===== CONFIG =====
+  // Paste your Meta Pixel ID here (Events Manager → Data sources → your pixel).
+  var META_PIXEL_ID = ""; // e.g. "123456789012345"
+  // ==================
+
+  var CONSENT_KEY = "np_consent";
+
+  function getConsent() {
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+  }
+  function setConsent(v) {
+    try { localStorage.setItem(CONSENT_KEY, v); } catch (e) {}
+  }
+
+  function loadPixel() {
+    if (!META_PIXEL_ID || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+    if (document.body.dataset.page === "lander") {
+      window.fbq('track', 'ViewContent', { content_name: document.title });
+    }
+  }
+
+  // --- consent banner ---
+  function initConsent() {
+    var c = getConsent();
+    if (c === "yes") { loadPixel(); return; }
+    if (c === "no" || !META_PIXEL_ID) return;
+    var box = document.createElement("div");
+    box.className = "consent show";
+    box.setAttribute("role", "dialog");
+    box.innerHTML =
+      '<div>We use cookies to measure how our pages perform and to improve our ads. ' +
+      'See our <a href="/privacy/">Privacy Policy</a>.</div>' +
+      '<div class="row"><button type="button" data-v="no">Decline</button>' +
+      '<button type="button" class="primary" data-v="yes">Accept</button></div>';
+    box.addEventListener("click", function (e) {
+      var v = e.target && e.target.getAttribute("data-v");
+      if (!v) return;
+      setConsent(v);
+      box.remove();
+      if (v === "yes") loadPixel();
+    });
+    document.body.appendChild(box);
+  }
+
+  // --- affiliate links: add sub-IDs for tracking in MaxBounty reports ---
+  function initAffLinks() {
+    var params = new URLSearchParams(location.search);
+    var src = params.get("utm_source") || (params.get("fbclid") ? "fb" : "direct");
+    var ad = params.get("utm_content") || params.get("utm_campaign") || "none";
+    var links = document.querySelectorAll("a[data-aff]");
+    links.forEach(function (a) {
+      try {
+        var u = new URL(a.getAttribute("href"));
+        u.searchParams.set("s1", src.slice(0, 50));
+        u.searchParams.set("s2", ad.slice(0, 50));
+        u.searchParams.set("s3", (a.getAttribute("data-aff") || "cta").slice(0, 50));
+        a.setAttribute("href", u.toString());
+      } catch (e) {}
+      a.setAttribute("rel", "sponsored nofollow noopener");
+      a.addEventListener("click", function () {
+        if (window.fbq) window.fbq('trackCustom', 'OutboundClick', { position: a.getAttribute("data-aff") });
+      });
+    });
+  }
+
+  // --- coupon copy ---
+  function initCopy() {
+    document.querySelectorAll("[data-copy]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var code = btn.getAttribute("data-copy");
+        var done = function () { btn.textContent = "Copied ✓"; setTimeout(function(){ btn.textContent = "Copy code"; }, 2000); };
+        if (navigator.clipboard) navigator.clipboard.writeText(code).then(done, done); else done();
+      });
+    });
+  }
+
+  // --- sticky CTA on mobile after scrolling past the first CTA ---
+  function initSticky() {
+    var sticky = document.querySelector(".sticky-cta");
+    var first = document.querySelector(".cta");
+    if (!sticky || !first || !("IntersectionObserver" in window)) return;
+    document.body.classList.add("has-sticky");
+    var seen = false;
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting && en.boundingClientRect.top < 0) seen = true;
+        sticky.classList.toggle("show", seen && !en.isIntersecting);
+      });
+    }).observe(first);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initAffLinks();
+    initCopy();
+    initSticky();
+    initConsent();
+    var y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+  });
+})();
