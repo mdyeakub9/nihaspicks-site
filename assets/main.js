@@ -6,7 +6,7 @@
 (function () {
   // ===== CONFIG =====
   // Paste your Meta Pixel ID here (Events Manager → Data sources → your pixel).
-  var META_PIXEL_ID = ""; // e.g. "123456789012345"
+  var META_PIXEL_ID = "1631902542004895";
   // ==================
 
   var CONSENT_KEY = "np_consent";
