@@ -17,14 +17,14 @@
 :root{--orange:#F25C05;--orange-2:#FF7A1A;--cream:#FFE3A3;--char:#2A2A2E}
 *{box-sizing:border-box}
 html,body{margin:0}
-body{font:400 17px/1.5 "Atkinson",system-ui,sans-serif;color:var(--char);background:var(--orange);min-height:100vh;display:flex;flex-direction:column}
+body{font:400 17px/1.5 "Atkinson",system-ui,sans-serif;color:var(--char);background:#fff}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--cream);outline-offset:3px}
 
 .top{font-size:12px;text-align:center;color:#fff;opacity:.9;padding:8px 14px}
 .top a{color:#fff}
 
-.banner{flex:1;position:relative;overflow:hidden;color:#fff;text-align:center;padding:18px 20px 34px;
+.banner{position:relative;overflow:hidden;color:#fff;text-align:center;padding:18px 20px 34px;
   background-color:var(--orange);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='97' viewBox='0 0 84 97'%3E%3Cg fill='none' stroke='%23FF7A1A' stroke-width='5'%3E%3Cpath d='M42 4 L80 26 L80 70 L42 92 L4 70 L4 26 Z'/%3E%3Cpath d='M42 24 L62 36 L62 60 L42 72 L22 60 L22 36 Z'/%3E%3C/g%3E%3C/svg%3E");
   background-size:84px 97px}
@@ -36,8 +36,8 @@ h1 span{color:var(--cream)}
 .sub{font-size:18px;margin:0 auto 6px;max-width:30ch}
 
 .stage{position:relative}
-.box{width:min(300px,78vw);margin:14px auto 4px;filter:drop-shadow(0 18px 18px rgba(80,25,0,.35))}
-.burst{position:absolute;right:-4px;top:8px;width:112px;height:112px;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;
+
+.burst{position:absolute;right:-4px;top:-6px;width:112px;height:112px;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;
   font:800 13px/1.05 "Bricolage",sans-serif;text-transform:uppercase;color:#fff;background:var(--char);transform:rotate(12deg);
   clip-path:polygon(50% 0,61% 12%,76% 6%,79% 22%,94% 24%,88% 39%,100% 50%,88% 61%,94% 76%,79% 78%,76% 94%,61% 88%,50% 100%,39% 88%,24% 94%,21% 78%,6% 76%,12% 61%,0 50%,12% 39%,6% 24%,21% 22%,24% 6%,39% 12%)}
 @media(min-width:560px){.burst{right:24px}}
@@ -60,12 +60,34 @@ h1 span{color:var(--cream)}
 .consent .row{display:flex;gap:10px;margin-top:12px}
 .consent button{flex:1;border-radius:999px;padding:11px;font:700 15px/1 "Atkinson",sans-serif;cursor:pointer;border:1px solid #ccc;background:#fff}
 .consent button.primary{background:var(--char);color:#fff;border-color:var(--char)}
-@media (prefers-reduced-motion:no-preference){.box{animation:pop .6s cubic-bezier(.2,1.4,.4,1) both}@keyframes pop{from{transform:translateY(16px) scale(.94);opacity:0}}}
+@media (prefers-reduced-motion:no-preference){.hero-img{animation:pop .6s cubic-bezier(.2,1.4,.4,1) both}@keyframes pop{from{transform:translateY(16px) scale(.94);opacity:0}}}
+
+.hero-img{width:min(420px,92vw);margin:10px auto 0;display:block;filter:drop-shadow(0 22px 22px rgba(80,25,0,.35))}
+.stage{position:relative}
+.disc{font-size:12.5px;opacity:.9;margin:8px 0 0}
+.disc a{color:#fff}
+
+.boxes{background:#fff;color:var(--char);padding:34px 0 30px}
+.boxes h2{font:800 clamp(24px,6vw,34px)/1.05 "Bricolage",sans-serif;text-transform:uppercase;text-align:center;margin:0 20px 6px}
+.boxes .lead{text-align:center;color:#55555c;margin:0 20px 18px}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 72%;max-width:300px;margin:0;scroll-snap-align:center;background:#EDEDED;border-radius:18px;overflow:hidden}
+.strip img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+@media(min-width:900px){.strip{justify-content:center;flex-wrap:wrap;overflow:visible}.strip figure{flex-basis:260px}}
+.hint{text-align:center;font-size:13px;color:#8a8a90;margin:0}
+@media(min-width:900px){.hint{display:none}}
+
+.facts{display:grid;gap:10px;max-width:520px;margin:26px auto 0;padding:0 20px;list-style:none}
+.facts li{display:flex;gap:12px;align-items:center;background:#FFF3E9;border-radius:14px;padding:14px 16px;font-weight:700}
+.facts li span{flex:0 0 34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font:800 16px/1 "Bricolage",sans-serif}
+.again{max-width:520px;margin:0 auto;padding:6px 20px 0;text-align:center}
+.again .cta{background:var(--orange);box-shadow:0 5px 0 #B54100}
+.again .disc{color:#55555c}
+.again .disc a{color:#55555c}
 </style>
 </head>
 <body data-page="lander">
-
-<div class="top">Advertisement. We earn a commission if you buy through this page. <a href="/disclosure/">Disclosure</a></div>
 
 <main class="banner">
   <div class="inner">
@@ -74,19 +96,7 @@ h1 span{color:var(--cream)}
     <p class="sub">Physics toys, puzzles and an exclusive tee. A new box every 3 months.</p>
 
     <div class="stage">
-      <svg class="box" viewBox="0 0 300 230" role="img" aria-label="Illustration of a Curiosity Box">
-        <path d="M150 52 L282 92 L150 132 L18 92 Z" fill="#FFF4DD"/>
-        <path d="M18 92 L150 132 L150 226 L18 186 Z" fill="#FBE9C6"/>
-        <path d="M150 132 L282 92 L282 186 L150 226 Z" fill="#F3D9A8"/>
-        <g fill="#F25C05">
-          <circle cx="48" cy="128" r="10"/><circle cx="74" cy="136" r="10"/><circle cx="100" cy="144" r="10"/><circle cx="126" cy="152" r="10"/>
-          <circle cx="48" cy="156" r="10"/><circle cx="74" cy="164" r="10"/><circle cx="100" cy="172" r="10"/><circle cx="126" cy="180" r="10"/>
-        </g>
-        <g transform="matrix(1 -0.3 0 1 0 0)" fill="#2A2A2E" font-family="Bricolage,sans-serif" font-weight="800" font-size="21">
-          <text x="164" y="206">CURIOSITY</text>
-          <text x="164" y="230">BOX</text>
-        </g>
-      </svg>
+      <img class="hero-img" src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/golden2024_setting_v2_1.png?width=900" width="900" height="718" alt="An open Curiosity Box with the science toys, puzzles and T-shirt that came inside" fetchpriority="high">
       <div class="burst">Free Legacy Box with annual plan</div>
     </div>
 
@@ -94,8 +104,34 @@ h1 span{color:var(--cream)}
 
     <a class="cta" data-aff="cta-main" href="https://www.curiositybox.com/" data-href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">Try it</a>
     <p class="note">Opens the official Curiosity Box site. Final price shown at checkout.</p>
+    <p class="disc">Affiliate link: we may earn a commission, at no extra cost to you. <a href="/disclosure/">Details</a></p>
   </div>
 </main>
+
+<section class="boxes">
+  <h2>Every box is different</h2>
+  <p class="lead">A few of their past boxes. Each one is a limited-edition surprise.</p>
+  <div class="strip">
+      <figure><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_118048.jpg?width=600" width="600" height="600" loading="lazy" alt="Box with a T-shirt, book and science toys"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_118019.jpg?width=600" width="600" height="600" loading="lazy" alt="Box with a desk lamp toy, puzzle and red T-shirt"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/spring-box.png?width=600" width="600" height="600" loading="lazy" alt="Spring box with a rubber duck toy and patterned box"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_10.png?width=600" width="600" height="600" loading="lazy" alt="Curiosity Box with toys spilling out"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_9_1.png?width=600" width="600" height="600" loading="lazy" alt="Curiosity Box opened with puzzles inside"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0328/3602/6508/files/Group_8.png?width=600" width="600" height="600" loading="lazy" alt="Curiosity Box with colourful science toys"></figure>
+  </div>
+  <p class="hint">Swipe to see more</p>
+
+  <ul class="facts">
+    <li><span>✓</span>A new box every 3 months</li>
+    <li><span>✓</span>Science toys, puzzles and an exclusive tee</li>
+    <li><span>✓</span>Ships straight to their door</li>
+  </ul>
+
+  <div class="again">
+    <a class="cta" data-aff="cta-bottom" href="https://www.curiositybox.com/" data-href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">Get 25% off with MAX25</a>
+    <p class="disc">Affiliate link: we may earn a commission. <a href="/disclosure/">Details</a></p>
+  </div>
+</section>
 
 <footer class="foot">
   <nav><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/disclosure/">Affiliate Disclosure</a><a href="/contact/">Contact</a></nav>
