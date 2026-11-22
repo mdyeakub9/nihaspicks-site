@@ -33,10 +33,20 @@
   }
 
   // --- consent banner ---
+  // Opt-in banner only where opt-in consent is required (Europe: EEA, UK, CH).
+  // Elsewhere (US, CA, AU) the pixel loads by default; the Privacy Policy explains it.
+  function needsOptIn() {
+    var tz = "";
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) { return true; }
+    if (!tz) return true;
+    return /^(Europe|Atlantic\/(Reykjavik|Canary|Madeira|Azores|Faroe))\b/.test(tz);
+  }
+
   function initConsent() {
     var c = getConsent();
     if (c === "yes") { loadPixel(); return; }
     if (c === "no" || !META_PIXEL_ID) return;
+    if (!needsOptIn()) { loadPixel(); return; }
     var box = document.createElement("div");
     box.className = "consent show";
     box.setAttribute("role", "dialog");

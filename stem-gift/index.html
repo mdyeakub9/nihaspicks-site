@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#F25C05">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<script defer src="/assets/main.js?v=1795300921"></script>
+<script defer src="/assets/main.js?v=1795365056"></script>
 <style>
 @font-face{font-family:"Bricolage";src:url(/assets/fonts/bricolage-grotesque-latin-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
 @font-face{font-family:"Atkinson";src:url(/assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
@@ -97,6 +97,22 @@ h1 span{color:var(--cream)}
 .hero-box img{position:relative;z-index:1;width:100%;height:auto;display:block}
 .hero-box .burst{right:-12px;top:-8px;z-index:2}
 @media (prefers-reduced-motion:no-preference){.hero-box img{animation:pop .7s cubic-bezier(.2,1.35,.4,1) both}}
+
+/* v2: above-the-fold CTA on phones */
+.banner{padding:16px 18px 26px}
+h1{font-size:clamp(30px,8.4vw,46px);margin:14px 0 8px}
+.sub{font-size:17px;margin-bottom:0}
+.hero-box{width:min(330px,60vw);margin:12px auto 2px}
+.hero-box .burst{width:92px;height:92px;font-size:11px;right:-30px;top:-10px}
+.banner .cta{margin:14px auto 10px;font-size:21px;padding:19px 22px}
+.banner .code{margin:0;padding:6px 8px 6px 14px;font-size:14px}
+.banner .code b{font-size:18px}
+.banner .code button{padding:8px 12px}
+.note{margin-top:10px;font-size:13.5px}
+.sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:25;display:block;text-align:center;background:var(--char);color:#fff;text-decoration:none;font:800 18px/1 "Bricolage",sans-serif;text-transform:uppercase;border-radius:999px;padding:17px 20px;box-shadow:0 8px 24px -6px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .25s ease}
+.sticky-cta.show{transform:none}
+body.has-sticky .foot{padding-bottom:90px}
+.consent{bottom:auto;top:12px}
 </style>
 </head>
 <body data-page="lander">
@@ -104,20 +120,19 @@ h1 span{color:var(--cream)}
 <main class="banner">
   <div class="inner">
     <span class="brand"><i></i>The Curiosity Box by Vsauce</span>
-    <h1>The world's best <span>science toys</span>, delivered to your door</h1>
-    <p class="sub">Physics toys, puzzles and an exclusive tee. A new box every 3 months.</p>
+    <h1>The science toy box that makes them say <span>&ldquo;whoa&rdquo;</span></h1>
+    <p class="sub">Physics toys, puzzles and an exclusive tee, delivered every 3 months.</p>
 
     <div class="stage">
       <div class="hero-box">
-        <img src="/assets/hero-box-900.webp" srcset="/assets/hero-box-600.webp 600w, /assets/hero-box-900.webp 900w" sizes="(max-width:600px) 84vw, 400px" width="900" height="935" alt="An open Curiosity Box packed with a gyroscope, a puzzle cube, a book, a ruler and a poster" fetchpriority="high">
+        <img src="/assets/hero-box-900.webp" srcset="/assets/hero-box-600.webp 600w, /assets/hero-box-900.webp 900w" sizes="(max-width:600px) 60vw, 330px" width="900" height="935" alt="An open Curiosity Box packed with a gyroscope, a puzzle cube, a book, a ruler and a poster" fetchpriority="high">
         <div class="burst">Free Legacy Box with annual plan</div>
       </div>
     </div>
 
-    <div class="code">25% off your first box <b>MAX25</b><button type="button" data-copy="MAX25">Copy code</button></div>
-
-    <a class="cta" data-aff="cta-main" href="https://www.curiositybox.com/" data-href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">Try it</a>
-    <p class="note">Opens the official Curiosity Box site. Final price shown at checkout.</p>
+    <a class="cta" data-aff="cta-main" href="https://www.curiositybox.com/" data-href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">Get 25% off my box</a>
+    <div class="code">Use code <b>MAX25</b><button type="button" data-copy="MAX25">Copy</button></div>
+    <p class="note">From about $70 a box. Final price shown on the official site.</p>
   </div>
 </main>
 
@@ -137,13 +152,16 @@ h1 span{color:var(--cream)}
   <ul class="facts">
     <li><span>✓</span>A new box every 3 months</li>
     <li><span>✓</span>Science toys, puzzles and an exclusive tee</li>
+    <li><span>✓</span>A gift that keeps arriving all year</li>
     <li><span>✓</span>Ships straight to their door</li>
   </ul>
 
   <div class="again">
-    <a class="cta" data-aff="cta-bottom" href="https://www.curiositybox.com/" data-href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">Get 25% off with MAX25</a>
+    <a class="cta" data-aff="cta-bottom" href="https://www.curiositybox.com/" data-href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">Get 25% off my box</a>
   </div>
 </section>
+
+<a class="sticky-cta" data-aff="cta-sticky" href="https://www.curiositybox.com/" data-href="https://afflat3e3.com/trk/lnk/993DE469-B85B-4026-9155-A42C27ABB56F/?o=26664&c=918277&a=804963&k=B3D18B2675C9BDAA4F6B37AB9E8E73CF&l=29279">Get 25% off with MAX25</a>
 
 <footer class="foot">
   <nav><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/disclosure/">Affiliate Disclosure</a><a href="/contact/">Contact</a></nav>
